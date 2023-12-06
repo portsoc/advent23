@@ -43,7 +43,6 @@ figure {
     display: flex;
     width: 15vmin;
     height: 15vmin;
-    cursor: pointer;
 }
 
 figure img {
@@ -72,6 +71,7 @@ figcaption {
     transform: perspective(50vmin) rotateY(0deg);
     transform-origin: right;
     border-radius: 0.5rem;
+    cursor: pointer;
 }
 
 .open figcaption {
