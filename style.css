@@ -1,6 +1,31 @@
 body {
-    background: linear-gradient(60deg, red, white, green);
+    background: repeating-linear-gradient(45deg, red, red 5vmin, white 5vmin, white 6vmin, green 6vmin, green 11vmin, white 11vmin, white 12vmin);
     min-height: 100vh;
+    perspective: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+
+header {
+    background: green;
+    border-radius: 0.5rem;
+    border: solid white 0.2rem;
+    padding: 1em 2em;
+}
+
+header h1 {
+    font-size: 4rem;
+    margin: 1rem;
+    text-align: center;
+    text-shadow: 0 0 0.5rem green;
+}
+
+header p {
+    font-size: 2rem;
+    text-align: center;
 }
 
 main {
@@ -8,6 +33,7 @@ main {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 figure {
@@ -15,22 +41,43 @@ figure {
     padding: 0;
     position: relative;
     display: flex;
+    width: 15vmin;
+    height: 15vmin;
+    cursor: pointer;
+}
+
+figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 1s ease-in-out;
+    transform-origin: left;
+    border-radius: 1rem;
+    overflow: hidden;
 }
 
 figcaption {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 7rem;
-    height: 7rem;
-    font-size: 3rem;
+    width: 100%;
+    height: 100%;
+    font-size: 4rem;
     background: red;
+    color: white;
+    border: solid white 0.2rem;
+    transition: transform 4s ease-in-out;
+    transform: perspective(50vmin) rotateY(0deg);
+    transform-origin: right;
+    border-radius: 0.5rem;
 }
 
 .open figcaption {
-    transition: transform 1s ease-in-out;
-    perspective: 50vh;
-    transform-origin: right;
-    transform: rotateY(85deg)
+    transform: perspective(50vmin) rotateY(90deg)
+}
+
+.locked figcaption {
+    border: solid white 0.1rem;
 }
