@@ -1,0 +1,36 @@
+body {
+    background: linear-gradient(60deg, red, white, green);
+    min-height: 100vh;
+}
+
+main {
+    width: 90vw;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+figure {
+    margin: 1em;
+    padding: 0;
+    position: relative;
+    display: flex;
+}
+
+figcaption {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7rem;
+    height: 7rem;
+    font-size: 3rem;
+    background: red;
+}
+
+.open figcaption {
+    transition: transform 1s ease-in-out;
+    perspective: 50vh;
+    transform-origin: right;
+    transform: rotateY(85deg)
+}
